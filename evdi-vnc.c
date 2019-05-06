@@ -106,6 +106,7 @@ rfbScreenInfoPtr startVncServer(int argc, char *argv[]) {
     fprintf(stderr, "Error getting RFB screen.\n");
     return screen;
   }
+  printf("!!!!!!@#@!\n");
   adjustPixelFormat(screen);
   rfbPixelFormat *format = &screen->serverFormat;
   fprintf(stdout,
@@ -290,7 +291,7 @@ int main(int argc, char *argv[]) {
       evdi_handle_events(evdiNode, &evdiCtx);
     }
   }
-
+  printf("!!!!!!!!!Try to Start vnc server!\n");
   // Start up VNC server
   screen = startVncServer(argc, argv);
   if (screen == 0) {
